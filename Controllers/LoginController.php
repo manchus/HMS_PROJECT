@@ -6,6 +6,7 @@ class LoginController
     private $_view;
     private $_adminmanager;
     private $_patientmanager;
+    private $_employemanager;
 
     public function __construct($url)
     {
@@ -15,8 +16,9 @@ class LoginController
         }
         else
         {
-            //$this->loginPatients();
-            $this->loginAdmins();
+            //$this->loginAdmins();
+            $this->loginPatients();
+            //$this->loginEmployee();
         }
     }
 
@@ -33,10 +35,21 @@ class LoginController
     private function loginPatients()
     {
         $this->_patientmanager = new PatientManager;
-        $patient = $this->_patientmanager->loginPatient();
+        $pat = $this->_patientmanager->loginPatient();
         
         $this->_view = new View('login');
-        $this->_view->generate(array('patient' => $patient));
+        echo array('patient' => $pat);
+        $this->_view->generate(array('patient' => $pat));
+    }
+
+    private function loginEmployee()
+    {
+        $this->_employemanager = new EmployeManager;
+        $emp = $this->_employemanager->loginEmployee();
+        
+        $this->_view = new View('login');
+        echo array('employee' => $emp);
+        $this->_view->generate(array('employee' => $emp));
     }
 }
 ?>

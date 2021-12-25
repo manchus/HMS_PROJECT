@@ -1,7 +1,6 @@
 <?php
 $this->_t = "Liste des département";
 ?>  
-
   <?php 
     include("Public/sidebar.php");
   ?>

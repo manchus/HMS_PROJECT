@@ -1,10 +1,10 @@
 <?php
 require_once('Views/View.php');
 
-class Detail_EmployeController
+class detail_employeController
 {
     private $_view;
-    private $_nursemanager;
+    private $_employemanager;
 
     public function __construct($url)
     {
@@ -20,11 +20,12 @@ class Detail_EmployeController
 
     private function nursedetail()
     {
-        $this->_nursemanager = new EmployeManager;
-        $nurs = $this->_nursemanager->getEmployeDetail();
+        $this->_employemanager = new EmployeManager;
+        $employ = $this->_employemanager->getEmployes();
+        //GetEmployes must be getEmployeDetails for one employ not for all
 
         $this->_view = new View('detail_employe');
-        $this->_view->generate(array('employe' => $nurs));
+        $this->_view->generate(array('employe' => $employ));
     }
 }
 ?>

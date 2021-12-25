@@ -1,5 +1,4 @@
 <?php
-
 class PatientManager extends Model
 {
     public function loginPatient()
@@ -12,7 +11,7 @@ class PatientManager extends Model
         }
         if(isset($_COOKIE["patientemail"]))
         {
-            //echo "<script>document.location.href='/HMS_PROJECT/rendez_vous'</script>";  
+            echo "<script>document.location.href='/HMS_PROJECT/rendez_vous'</script>";  
         }
     }
     public function getPatients()
