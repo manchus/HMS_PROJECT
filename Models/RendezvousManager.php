@@ -19,8 +19,6 @@ class RendezvousManager extends Model
         return $this->getAll('doctor','Doctor');
     }
 
-
-
     public function deleteRendezvous()
     {
         $this->getBdd();
@@ -54,6 +52,7 @@ class RendezvousManager extends Model
             $_POST["date_rendezvous"],$_POST["heure_rendezvous"],'Appointment',$_GET["id"]);
         }
     }
+
 }
 
 ?>

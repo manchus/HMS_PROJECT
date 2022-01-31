@@ -317,5 +317,23 @@ Abstract class Model
 
         $query->closeCursor();
     }
+    //================ new model for patient take appointement=======
+    public function AppointmentFromPatient($table,$id_patient,$dep,$doc,$date,$heure,$obj)
+    {
+        //$id_patient = 3; //<--- COOKIE
+        $sql = "insert into ".$table." (id_patient,departement,id_medecin,date_rendezvous,heure_rendezvous)values(?,?,?,?,?);";
+
+        $query = self::$_db->prepare($sql);
+        $query->execute([$id_patient,$dep,$doc,$date,$heure]);
+        
+        $data = array("id_patient" => $id_patient, "departement" => $dep, "id_medcine" => $doc,
+            "date_rendezvous" => $date, "heure_rendezvous" => $heure);
+
+        $var = new $obj($data);
+        
+        var_dump($var);
+        return $var;
+        $query->closeCursor();
+    }
 }
 ?>

@@ -4,7 +4,7 @@ require_once('Views/View.php');
 class ajout_rendezvousController
 {
     private $_view;
-    private $_nursermanager;
+    private $_nursemanager;
 
     public function __construct($url)
     {
