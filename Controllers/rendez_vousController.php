@@ -30,7 +30,7 @@
             $this->_doctormanager = new DoctorManager;
             $docs = $this->_doctormanager->getDoctors();
 
-            // showing doctor name and departement  
+            //showing doctor name and departement  
             $this->_view = new View('rendez_vous');
             $this->_view->generate(array('appointment' => $apps,'departement'=>$dep,'doctor'=>$docs));
 

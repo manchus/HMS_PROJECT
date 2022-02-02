@@ -16,10 +16,10 @@ class LoginController
         }
         else
         {
-            // automatisation des logins pour chaques fucntion == need more concentration.!!
+            // automatisation des logins pour chaques function == need more concentration.!!
             
-            //$this->loginAdmins();
-            $this->loginPatients();
+            $this->loginAdmins();
+            //$this->loginPatients();
             //$this->loginEmployee();
         }
     }

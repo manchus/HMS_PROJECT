@@ -22,7 +22,6 @@ if(empty($_COOKIE["patientemail"]) && empty($_COOKIE["patientpassword"]))
         echo "<script>document.location.href='/HMS_PROJECT/'</script>";  
       }
     }
-    
   ?>
   </form>
 <form method="post">
